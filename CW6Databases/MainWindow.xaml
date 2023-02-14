@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="DisplayBox" HorizontalAlignment="Left" Margin="178,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AssetDisplayBox" HorizontalAlignment="Left" Margin="178,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="DisplayBox_TextChanged"/>
         <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="357,161,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
 
     </Grid>
