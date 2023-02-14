@@ -2,7 +2,7 @@
 // Date: 2/14/2023
 // Assignment: CW6 Databases
 // Class: 352
-// Description: C# Code for the AddEmployee Window
+// Description: C# Code for the AddAssetWindow
 
 using System;
 using System.Collections.Generic;
@@ -22,14 +22,14 @@ using System.Windows.Shapes;
 namespace CW6Databases
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeWindow.xaml
+    /// Interaction logic for AddAssetWindow.xaml
     /// </summary>
-    public partial class AddEmployeeWindow : Window
+    public partial class AddAssetWindow : Window
     {
 
         OleDbConnection cn;
 
-        public AddEmployeeWindow()
+        public AddAssetWindow()
         {
             InitializeComponent();
 
@@ -38,12 +38,12 @@ namespace CW6Databases
 
         private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-            string query = "insert into Employees (EmployeeID, FirstName, LastName) values (@EmployeeID, @FirstName, @LastName)"; // Query command to add to Database
+            string query = "insert into Assets (EmployeeID, AssetID, Description) values (@EmployeeID, @AssetID, @Description)"; // Query command to add to Database
             OleDbCommand cmd = new OleDbCommand(query, cn);
             cmd.Parameters.AddWithValue("@EmployeeID", EmployeeIDTextBox.Text);
-            cmd.Parameters.AddWithValue("@FirstName", FirstNameTextBox.Text);
-            cmd.Parameters.AddWithValue("@LastName", LastNameTextBox.Text);
-            
+            cmd.Parameters.AddWithValue("@AssetID", AssetIDTextBox.Text);
+            cmd.Parameters.AddWithValue("@Description", DescriptionTextBox.Text);
+
             cn.Open();
             cmd.ExecuteNonQuery(); // Executes query
             cn.Close();

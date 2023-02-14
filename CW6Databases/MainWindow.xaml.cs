@@ -1,4 +1,10 @@
-﻿using System;
+﻿// Name: Zach Coomer
+// Date: 2/14/2023
+// Assignment: CW6 Databases
+// Class: 352
+// Description: C# Code for the Main Window
+
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
@@ -95,7 +101,13 @@ namespace CW6Databases
         private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
             var addEmployeeWindow = new AddEmployeeWindow();
-            addEmployeeWindow.ShowDialog();
+            addEmployeeWindow.ShowDialog(); // opens the add employee window
+        }
+
+        private void AddAssetButton_Click(object sender, RoutedEventArgs e)
+        {
+            var addAssetWindow = new AddAssetWindow();
+            addAssetWindow.ShowDialog(); // opens the add asset window
         }
     }
 
