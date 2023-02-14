@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF1F8A8C">
     <Grid>
-        <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="103,372,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
-        <Label x:Name="AssetLabel" Content="Assets" HorizontalAlignment="Left" Margin="111,17,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="AssetDisplayBox" TextWrapping="Wrap" Text="Asset Information Displayed Here" Margin="15,38,549,62" RenderTransformOrigin="0.475,0.496"/>
-        <DataGrid x:Name="AssetGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="330,46,133,169"/>
+        <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="154,284,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
+        <Label x:Name="AssetLabel" Content="Assets" HorizontalAlignment="Left" Margin="162,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="AssetGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,36,482,155"/>
 
     </Grid>
 </Window>
