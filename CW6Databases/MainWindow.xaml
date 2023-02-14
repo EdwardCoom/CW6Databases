@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CW6Databases"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FF1F8A8C">
     <Grid>
-        <TextBox x:Name="AssetDisplayBox" HorizontalAlignment="Left" Margin="178,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="DisplayBox_TextChanged"/>
-        <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="357,161,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
+        <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="103,372,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
+        <Label x:Name="AssetLabel" Content="Assets" HorizontalAlignment="Left" Margin="111,17,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AssetDisplayBox" TextWrapping="Wrap" Text="Asset Information Displayed Here" Margin="15,38,549,62" RenderTransformOrigin="0.475,0.496"/>
+        <DataGrid x:Name="AssetGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="330,46,133,169"/>
 
     </Grid>
 </Window>

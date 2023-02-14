@@ -37,14 +37,36 @@ namespace CW6Databases
             cn.Open();
             OleDbDataReader read = cmd.ExecuteReader();
 
-            string data = "";
+            //string data = "Employee ID\tAsset ID\tDescription\n";
+            //while (read.Read())
+            //{
+            //    data += read[0].ToString() + "\t" + read[1].ToString() + "\t" + read[2].ToString() + "\n"; // concatenating all of the data to a string to be displayed
+            //}
+
+            //AssetDisplayBox.Text = data; // where the data is being displayed.
+            //cn.Close();
+
+            
+            //cn.Open();
+            List<Asset> assets = new List<Asset>();
             while (read.Read())
             {
-                data += read[0].ToString() + " " + read[1].ToString() + " " + read[2].ToString() + "\n"; // concatenating all of the data to a string to be displayed
+                Asset asset = new Asset();
+                asset.EmployeeID = read["EmployeeID"].ToString();
+                asset.AssetID = read["AssetID"].ToString();
+                asset.Description = read["Description"].ToString();
+                /assets.Add(asset);
             }
-            
-            AssetDisplayBox.Text = data; // where the data is being displayed.
+
+            AssetGrid.ItemsSource = assets;
             cn.Close();
         }
+    }
+
+    public class Asset
+    {
+        public string EmployeeID { get; set; }
+        public string AssetID { get; set; }
+        public string Description { get; set; }
     }
 }
