@@ -18,6 +18,26 @@ using System.Windows.Shapes;
 namespace CW6Databases
 {
     /// <summary>
+    /// Class used to populate DataGrid for Asset Table fields
+    /// </summary>
+    public class Asset
+    {
+        public string EmployeeID { get; set; }
+        public string AssetID { get; set; }
+        public string Description { get; set; }
+    }
+    
+    /// <summary>
+    /// Class used to populate DataGrid for Employee Table fields
+    /// </summary>
+    public class Employee
+    {
+        public string EmployeeID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
+    /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -27,7 +47,7 @@ namespace CW6Databases
         {
             InitializeComponent();
 
-            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source =|DataDirectory|\\ZC CW6 DatabasesFH.accdb");
+            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source =|DataDirectory|\\ZC CW6 DatabasesFH.accdb"); // Database Connection String
         }
 
         private void Assets_Click(object sender, RoutedEventArgs e)
@@ -50,14 +70,27 @@ namespace CW6Databases
             AssetGrid.ItemsSource = assets; // Information being display in DataGrid
             cn.Close();
         }
+
+        private void Employees_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "select EmployeeID, FirstName, LastName from Employees";
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+            cn.Open();
+            OleDbDataReader read = cmd.ExecuteReader();
+
+            List<Employee> employees = new List<Employee>(); // list used to hold employee information
+            while (read.Read())
+            {
+                Employee employee = new Employee();
+                employee.EmployeeID = read["EmployeeID"].ToString();
+                employee.FirstName = read["FirstName"].ToString();
+                employee.LastName = read["LastName"].ToString();
+                employees.Add(employee);
+            }
+
+            EmployeeGrid.ItemsSource = employees; // Information being display in DataGrid
+            cn.Close();
+        }
     }
-    /// <summary>
-    /// Class used to populate DataGrid for Asset Table fields
-    /// </summary>
-    public class Asset
-    {
-        public string EmployeeID { get; set; }
-        public string AssetID { get; set; }
-        public string Description { get; set; }
-    }
+
 }

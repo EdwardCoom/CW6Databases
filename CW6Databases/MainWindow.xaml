@@ -10,6 +10,9 @@
         <Button x:Name="Assets" Content="See Assets" HorizontalAlignment="Left" Margin="154,284,0,0" VerticalAlignment="Top" Click="Assets_Click"/>
         <Label x:Name="AssetLabel" Content="Assets" HorizontalAlignment="Left" Margin="162,10,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="AssetGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,36,482,155"/>
+        <DataGrid x:Name="EmployeeGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="346,36,186,155"/>
+        <Label x:Name="EmployeeLabel" Content="Employees" HorizontalAlignment="Left" Margin="447,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Employees" Content="See Employees" HorizontalAlignment="Left" Margin="439,284,0,0" VerticalAlignment="Top" Click="Employees_Click"/>
 
     </Grid>
 </Window>
