@@ -91,6 +91,12 @@ namespace CW6Databases
             EmployeeGrid.ItemsSource = employees; // Information being display in DataGrid
             cn.Close();
         }
+
+        private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var addEmployeeWindow = new AddEmployeeWindow();
+            addEmployeeWindow.ShowDialog();
+        }
     }
 
 }
