@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -26,7 +27,7 @@ namespace CW6Databases
         {
             InitializeComponent();
 
-            cn = new OleDbConnection("ZC_CW6_DatabasesFHConnectionString");
+            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source =|DataDirectory|\\ZC CW6 DatabasesFH.accdb");
         }
 
         private void Assets_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,8 @@ namespace CW6Databases
             {
                 data += read[0].ToString() + "\n";
             }
-
+            DisplayBox.Text = data;
+            cn.Close();
         }
     }
 }
