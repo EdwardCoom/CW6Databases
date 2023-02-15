@@ -49,3 +49,7 @@ This program is currently intended to be run in Visual Studios 2022.
 ## Bugs
 
 Program will crash if you try and add an asset that is not tied to an established EmployeeID.
+
+## Extra Credit
+
+I added the ability to add Employees and Assets
